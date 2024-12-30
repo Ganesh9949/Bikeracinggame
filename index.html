@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Racing Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+    <div id="controls">
+      <button id="play-pause-btn" onclick="toggleGame()">Pause</button>
+      <button id="music-toggle-btn" onclick="toggleMusic()">Music: On</button>
+    </div>
+    <div id="speedometer">
+      <label for="speed-control">Speed:</label>
+      <input id="speed-control" type="range" min="3" max="10" step="1" value="5" onchange="adjustPlayerSpeed(this.value)">
+      <span id="current-speed">5</span>
+    </div>
+    <div id="game-over-popup" class="hidden">
+      <h2>Game Over</h2>
+      <p>Your Score: <span id="final-score">0</span></p>
+      <button onclick="restartGame()">Restart</button>
+    </div>
+    <audio id="background-music" loop>
+      <source src="soundbike.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
